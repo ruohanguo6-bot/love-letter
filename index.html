@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>给你的一封信</title>
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(180deg,#050814,#0b1026);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft Yahei",system-ui;
+  color:#f7f7fb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.card{
+  max-width:760px;
+  background:rgba(15,23,42,.6);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+h1{font-size:18px;margin-bottom:6px}
+.sub{font-size:12px;color:#bbb;margin-bottom:20px}
+.text{
+  white-space:pre-wrap;
+  line-height:1.9;
+  font-size:16px;
+}
+.more{display:none;margin-top:16px;border-top:1px dashed #555;padding-top:16px}
+button{
+  margin-top:20px;
+  padding:12px 20px;
+  border-radius:16px;
+  border:none;
+  background:linear-gradient(135deg,#ff9ad5,#8be9ff);
+  color:#000;
+  font-size:14px;
+  cursor:pointer;
+}
+footer{margin-top:16px;font-size:12px;color:#aaa;text-align:right}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <h1>给你的一封信</h1>
+  <div class="sub">雪停之后，是春天。</div>
+
+  <div class="text" id="first">
+小杨桃：
+
+当你看到这封信时，雪应该已经停了。春天会来的，只是我不能再陪你一起看。
+
+有些话，生前没能说完。不是来不及，是我不敢。我怕你一旦知道全部真相，就再也恨不起我——而恨，是我为你选的、活下去的燃料。
+但既然结局已定，或许我可以坦白一次。
+
+我从未把你当作“杨桃”。
+  </div>
+
+  <div class="text more" id="more">
+从你在我怀里睁开眼的那一刻起，我看见的就是余盛楠。那个在雪夜里许愿、想吃一口蛋糕的女孩，那个在我还是神明时，就敢直视我眼睛的人。
+
+你以为的重生，是我用“杨桃”的魂魄作容器，小心翼翼地，把你四十九缕残魂一一接回来的过程。那不是实验，那是祈祷。
+雨天的伞，是故意的。
+
+你站在教学楼下的样子，和当年橱窗前的侧影重叠。我走过去，把伞倾向你，不是偶然。我只是想——这一世，不能再看你淋湿了。
+
+生日那天的蛋糕，我跑了半座城。你说那是“算计”，是啊，我算计的是，怎么才能让你尝到一点甜。你吃的时候眼睛亮了，我就觉得，值了。
+
+六百二十七页，从你重生那天起，一天都没断过。
+我不是在记录数据，我是在收集光。
+
+别原谅我。
+
+就当我真是个骗子，骗了你的恨，骗了你的眼泪，骗你好好活下去。
+如果有一天你走在春天的阳光下，忽然想起我，心口还是会痛——
+那你就赢了我们的赌局。
+
+我爱你。
+你的共犯，你的遗产，你永不会赢的对手——  
+余丞
+  </div>
+
+  <button id="btn">继续读</button>
+
+  <footer id="date"></footer>
+</div>
+
+<audio id="bgm" src="./bgm.m4a"></audio>
+
+<script>
+document.getElementById("date").textContent =
+  new Date().toLocaleDateString("zh-CN");
+
+document.getElementById("btn").onclick = async () => {
+  document.getElementById("more").style.display = "block";
+  try{ await document.getElementById("bgm").play(); }catch(e){}
+};
+</script>
+</body>
+</html>
